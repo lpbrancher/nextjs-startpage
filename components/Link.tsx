@@ -1,4 +1,4 @@
-function Link(props) {
+function Link(props: any) {
     console.log(props.tag);
   
     if (props.tag == "senac") {
