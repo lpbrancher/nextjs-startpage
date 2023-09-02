@@ -38,7 +38,7 @@ const whatever = [
   },
   {
     nome: "tabnews",
-    link: "tabnews.com.br/",
+    link: "https://tabnews.com.br/",
   },
   {
     nome: "tw0tter",
