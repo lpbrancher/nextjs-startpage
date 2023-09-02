@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 const apiKey = "e61aa27d22eb0b30ab346a9f6441d600";
 const url = `https://api.openweathermap.org/data/2.5/weather?q=porto alegre&appid=${apiKey}&units=metric`;
 
-function Weather(props) {
+function Weather(props: any) {
   const [desc, setDesc] = useState([]);
   const [temp, setTemp] = useState<any>([]);
   const [icon, setIcon] = useState<any>([]);
