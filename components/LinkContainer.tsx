@@ -59,8 +59,8 @@ const person = [
     link: "https://autistici.org",
   },
   {
-    nome: "linkedin",
-    link: "https://linkedin.com",
+    nome: "pinterest",
+    link: "https://pinterest.com",
   },
   {
     nome: "moodle",
