@@ -6,10 +6,10 @@ const apiKey = "e61aa27d22eb0b30ab346a9f6441d600";
 const url = `https://api.openweathermap.org/data/2.5/weather?q=porto alegre&appid=${apiKey}&units=metric`;
 
 function Weather(props: any) {
-  const [desc, setDesc] = useState([]);
-  const [temp, setTemp] = useState<any>([]);
+  const [desc, setDesc] = useState('loading...');
+  const [temp, setTemp] = useState<any>(0);
   const [icon, setIcon] = useState<any>([]);
-  const [loc, setLoc] = useState([]);
+  const [loc, setLoc] = useState('Loading...');
 
   useEffect(() => {
     fetch(url)
@@ -30,7 +30,7 @@ function Weather(props: any) {
         setTemp(Math.round(data.main.temp));
         setLoc(data.name);
       });
-  });
+  }, []);
 
   return (
     <div className="weather-container">
