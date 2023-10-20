@@ -3,22 +3,17 @@ import LinkCard from "./LinkCard";
 // LINKS
 const dev = [
   {
-    nome: "Outlook",
+    nome: "outlook",
     link: "https://outlook.office.com/mail/",
     tag: "senac",
   },
   {
-    nome: "Bb Collab",
-    link: "https://ca.bbcollab.com/collab/ui/session/guest/6a0fe0668b4f4f4ba5925efba6f32347",
-    tag: "senac",
-  },
-  {
-    nome: "Sharepoint",
+    nome: "sharepoint",
     link: "https://senacrs365.sharepoint.com/sites/FS-GETE-MATERIAIS/Documentos%20Compartilhados/Forms/AllItems.aspx",
     tag: "senac",
   },
   {
-    nome: "Intranet",
+    nome: "intranet",
     link: "https://novaintranet.senacrs.com.br/senac/",
     tag: "senac",
   },
@@ -30,6 +25,10 @@ const dev = [
     nome: "github",
     link: "https://github.com/",
   },
+  {
+    nome: "leetcode",
+    link: "https://leetcode.com"
+  }
 ];
 const whatever = [
   {
@@ -45,7 +44,7 @@ const whatever = [
     link: "https://twitter.com",
   },
   {
-    nome: "YouTube",
+    nome: "youtube",
     link: "https://www.youtube.com/",
   },
   {
