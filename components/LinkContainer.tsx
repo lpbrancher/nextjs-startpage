@@ -36,12 +36,16 @@ const whatever = [
     link: "https://reddit.com",
   },
   {
-    nome: "tabnews",
-    link: "https://tabnews.com.br/",
+    nome: "r/brdev",
+    link: "https://reddit.com/r/brdev",
   },
   {
-    nome: "tw0tter",
+    nome: "xitter",
     link: "https://twitter.com",
+  },
+  {
+    nome: "tabnews",
+    link: "https://tabnews.com.br/",
   },
   {
     nome: "youtube",
