@@ -1,6 +1,4 @@
-function Link(props: any) {
-    console.log(props.tag);
-  
+function Link(props: any) {  
     if (props.tag == "senac") {
       return (
         <li>

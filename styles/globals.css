@@ -22,8 +22,30 @@ body {
   overflow-x: hidden;
 }
 body {
-  background-image: url("https://source.unsplash.com/1920x1080/?wallpaper nature city");
+  /* background-image: url("https://source.unsplash.com/1920x1080/?wallpaper nature city"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+}
+.btn_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.ui-btn {
+  font-family: monospace;
+  background-color: rgba(55, 55, 55, .9);
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  width: 160px;
+  text-align: center;
+  box-shadow: 3px 3px rgba(0, 0, 0, .7);
+  border: none;
+  margin: 5px 40px;
+  cursor: pointer;
+}
+.ui-btn:hover {
+  text-decoration: none;
+  background-color: rgba(35, 35, 35, .9);
 }

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
@@ -7,6 +8,22 @@ import LinkContainer from '@/components/LinkContainer'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+    const [background, setBackground] = useState('');
+
+    async function fetchPapes() {
+      const response = await fetch('https://source.unsplash.com/1920x1080/?wallpaper nature city');
+      const backgrounds = await response.url;
+      setBackground(backgrounds);
+    };
+    // initial page load
+    useEffect(() => {
+      fetchPapes()      
+    }, []);
+    // updating bg
+    useEffect(() => {
+      document.body.style.backgroundImage = `url(${background})`;
+    }, [background]);
+
   return (
     <>
       <Head>
@@ -18,6 +35,10 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <Weather/>
         <LinkContainer/>
+        <div className="btn_container">
+          <button className='ui-btn' onClick={fetchPapes}>Change background</button>
+          <a className='ui-btn' href={background} target='_blank'>Save background</a>
+        </div>
       </main>
     </>
   )
