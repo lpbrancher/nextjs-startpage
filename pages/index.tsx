@@ -4,25 +4,29 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Weather from '@/components/Weather'
 import LinkContainer from '@/components/LinkContainer'
+import Loader from '@/components/Loader'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const [background, setBackground] = useState('');
+  const [background, setBackground] = useState('');
+  const [loading, setLoading] = useState(true)
 
-    async function fetchPapes() {
-      const response = await fetch('https://source.unsplash.com/1920x1080/?wallpaper nature city');
-      const backgrounds = await response.url;
-      setBackground(backgrounds);
-    };
-    // initial page load
-    useEffect(() => {
-      fetchPapes()      
-    }, []);
-    // updating bg
-    useEffect(() => {
-      document.body.style.backgroundImage = `url(${background})`;
-    }, [background]);
+  async function fetchPapes() {
+    setLoading(true)
+    const response = await fetch('https://source.unsplash.com/1920x1080/?wallpaper nature city');
+    const backgrounds = await response.url;
+    setBackground(backgrounds);
+  };
+  // initial page load
+  useEffect(() => {
+    fetchPapes()
+  }, []);
+  // updating bg
+  useEffect(() => {
+    if(background!=''){setLoading(false)};
+    document.body.style.backgroundImage = `url(${background})`;
+  }, [background]);
 
   return (
     <>
@@ -33,11 +37,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Weather/>
-        <LinkContainer/>
+        <Weather />
+        <LinkContainer />
         <div className="btn_container">
           <button className='ui-btn' onClick={fetchPapes}>Change background</button>
           <a className='ui-btn' href={background} target='_blank'>Save background</a>
+        </div>
+        <div className="loader_container">
+          {loading ? <Loader /> : <></>}
         </div>
       </main>
     </>
